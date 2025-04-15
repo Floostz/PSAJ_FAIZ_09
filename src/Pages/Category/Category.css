@@ -1,0 +1,324 @@
+/* styling for the categories page  */
+
+main.categories-main {
+    background-color: var(--bg-main);
+    height: 100vh;
+    padding-block-start: 3rem;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+.top > p {
+    color: white;
+    font-size: 2rem;
+    font-family: poppins-semiBold;
+    width: 90vw;
+    max-width: 80rem;
+    margin: 0rem auto 4rem;
+    position: relative;
+    opacity: 0;
+    z-index: 3;
+    animation: slide-up 2s ease-in-out forwards;
+    -webkit-animation: slide-up 2s ease-in-out forwards;
+    transform: rotateX(-90deg) translateY(40rem);
+    -webkit-transform: rotateX(-90deg) translateY(40rem);
+    -moz-transform: rotateX(-90deg) translateY(40rem);
+    -ms-transform: rotateX(-90deg) translateY(40rem);
+    -o-transform: rotateX(-90deg) translateY(40rem);
+    line-height: 1.4;
+}
+
+.top > p::after {
+    content: "";
+    width: 15rem;
+    height: 15rem;
+    background: linear-gradient(var(--ball));
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    animation: float 10s ease-in-out infinite alternate;
+    -webkit-animation: float 10s ease-in-out infinite alternate;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    z-index: -1;
+    filter: blur(3px);
+}
+
+.categories-main .categories-body {
+    position: relative;
+    z-index: 6;
+    background-color: var(--category-bg);
+    border-top-left-radius: 4rem;
+    border-top-right-radius: 4rem;
+    padding: 2.5rem;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.categories-body h1 {
+    font-family: poppins-semibold;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 1rem auto 1rem 0rem;
+    max-width: 90vw;
+    color: var(--text-primary, #333);
+    position: relative;
+}
+
+.categories-body h1::after {
+    content: "";
+    display: block;
+    width: 6rem;
+    height: 0.25rem;
+    background: linear-gradient(90deg, var(--accent-color, #6052d1) 0%, transparent 100%);
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+}
+
+.categories-container {
+    display: flex;
+    justify-items: center;
+    flex-wrap: wrap;
+    row-gap: 4rem;
+    column-gap: 5rem;
+    justify-content: center;
+    width: 90vw;
+    max-width: 45rem;
+    margin: 3rem auto 0;
+    perspective: 1000px;
+}
+
+.categories-container > div {
+    max-width: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.categories-container > div:hover {
+    transform: translateY(-5px);
+}
+
+.categories-container > div > div {
+    width: 14rem;
+    height: 14rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.categories-container > div > div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.5s ease;
+}
+
+.categories-container > div > div:hover::before {
+    transform: scale(1.5);
+}
+
+.categories-container > div .active-Penjumlahan {
+    border: 8px solid hsl(16, 100%, 73%);
+    box-shadow: 0 5px 15px hsla(16, 100%, 53%, 0.3), inset 0 0 15px hsla(16, 100%, 73%, 0.5);
+}
+
+.categories-container > div .active-Pengurangan {
+    border: 8px solid hsl(196, 100%, 73%);
+    box-shadow: 0 5px 15px hsla(196, 100%, 53%, 0.3), inset 0 0 15px hsla(196, 100%, 73%, 0.5);
+}
+
+.categories-container > div .active-Pembagian {
+    border: 8px solid hsl(100, 100%, 73%);
+    box-shadow: 0 5px 15px hsla(100, 100%, 53%, 0.3), inset 0 0 15px hsla(100, 100%, 73%, 0.5);
+}
+
+.categories-container > div .active-Perkalian {
+    border: 8px solid hsl(316, 100%, 73%);
+    box-shadow: 0 5px 15px hsla(316, 100%, 53%, 0.3), inset 0 0 15px hsla(316, 100%, 73%, 0.5);
+}
+
+.Penjumlahan .Penjumlahan-circle {
+    background: linear-gradient(var(--btn-addition));
+    box-shadow: 0 0.5rem 1.5rem hsla(16, 100%, 53%, 0.5);
+}
+
+.Pengurangan .Pengurangan-circle {
+    background: linear-gradient(var(--btn-subtraction));
+    box-shadow: 0 0.5rem 1.5rem hsl(196, 100%, 43%, 0.5);
+}
+
+.Pembagian .Pembagian-circle {
+    background: linear-gradient(var(--btn-division));
+    box-shadow: 0 0.5rem 1.5rem hsl(115, 100%, 53%, 0.5);
+}
+
+.Perkalian .Perkalian-circle {
+    background: linear-gradient(var(--btn-multiplication));
+    box-shadow: 0 0.5rem 1.5rem hsl(316, 100%, 53%, 0.4);
+}
+
+.categories-container > div div p {
+    color: white;
+    font-size: 5rem;
+    font-family: poppins-semiBold;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    user-select: none;
+}
+
+.categories-container > div div p::selection {
+    background-color: initial;
+    color: white;
+}
+
+.categories-container > div > p {
+    font-size: 2rem;
+    font-family: poppins-semiBold;
+    cursor: pointer;
+    margin: 1.5rem 0 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.categories-container > div > p::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, currentColor, transparent);
+    transition: width 0.3s ease;
+}
+
+.categories-container > div:hover > p::after {
+    width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    .top p {
+        font-size: 2.5rem;
+    }
+
+    .categories-body h1 {
+        text-align: center;
+        margin: 1rem auto 4rem;
+    }
+
+    .categories-body h1::after {
+        margin: 0.5rem auto 0;
+    }
+
+    .categories-container {
+        column-gap: 10rem;
+    }
+
+    .categories-container > div > div {
+        width: 15rem;
+        height: 15rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .top {
+        height: 15rem;
+    }
+
+    .top > p {
+        margin: 1.5rem auto 0rem auto;
+    }
+
+    .categories-main .categories-body {
+        border-radius: 3rem 3rem 0 0;
+        -webkit-border-radius: 3rem 3rem 0 0;
+        -moz-border-radius: 3rem 3rem 0 0;
+        -ms-border-radius: 3rem 3rem 0 0;
+        -o-border-radius: 3rem 3rem 0 0;
+    }
+
+    .categories-container {
+        display: flex;
+        max-width: none;
+        align-items: center;
+        margin: 5rem auto;
+    }
+}
+
+/* animations and hover effect*/
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    25% {
+        transform: translateY(-2rem) translateX(5rem);
+    }
+    50% {
+        transform: translateY(2rem) translateX(10rem);
+    }
+    75% {
+        transform: translateY(-2rem) translateX(15rem);
+    }
+    100% {
+        transform: translateY(0) translateX(calc(90% - 15rem));
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        transform: rotateX(-90deg) translateY(40rem);
+        opacity: 0;
+    }
+    100% {
+        transform: rotateX(0deg) translateY(0);
+        -webkit-transform: rotateX(0deg) translateY(0);
+        -moz-transform: rotateX(0deg) translateY(0);
+        -ms-transform: rotateX(0deg) translateY(0);
+        -o-transform: rotateX(0deg) translateY(0);
+        opacity: 1;
+    }
+}
+
+.categories-container > div > div:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.categories-container > div > div:active {
+    transform: scale(0.95) translateY(5px);
+    -webkit-transform: scale(0.95) translateY(5px);
+    -moz-transform: scale(0.95) translateY(5px);
+    -ms-transform: scale(0.95) translateY(5px);
+    -o-transform: scale(0.95) translateY(5px);
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
+}
